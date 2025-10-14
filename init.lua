@@ -3,20 +3,6 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 
-local function resize_if_neotree(delta)
-  if vim.bo.filetype == "neo-tree" then
-    vim.cmd("vertical resize " .. delta)
-  end
-end
-
-vim.keymap.set("n", "<C-Left>", function()
-  resize_if_neotree("-5")
-end, { desc = "Shrink Neo-tree" })
-
-vim.keymap.set("n", "<C-Right>", function()
-  resize_if_neotree("+5")
-end, { desc = "Expand Neo-tree" })
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
