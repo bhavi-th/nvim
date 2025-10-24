@@ -8,13 +8,16 @@ return {
   {
     "mason-org/mason-lspconfig.nvim",
     config = function()
-      require("mason-lspconfig").setup {
+      require("mason-lspconfig").setup ({
         ensure_installed = {
           "lua_ls",
           "vimls",
           "ts_ls",
+          "html",
+          "cssls",
+          "clangd",
         }
-      }
+      })
     end
   },
   {
@@ -27,7 +30,7 @@ return {
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
       vim.keymap.set({ 'n' }, '<leader>ca', vim.lsp.buf.code_action, {})
 
-      vim.lsp.enable("tsserver")
+      vim.lsp.enable("ts_ls")
 
       vim.diagnostic.config({
         virtual_text = {

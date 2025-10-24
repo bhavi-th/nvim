@@ -7,3 +7,7 @@ vim.cmd("set relativenumber")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+
+vim.opt.cursorline = true
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#3c3c3c" })
+
