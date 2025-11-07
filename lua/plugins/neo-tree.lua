@@ -13,6 +13,8 @@ return {
       vim.cmd("vertical resize 30")
     end, {})
 
+    vim.keymap.set("n", "<C-b>", ":Neotree toggle<CR>", { noremap = true, silent = true })
+
     require("neo-tree").setup({
       filesystem = {
         filtered_items = {
