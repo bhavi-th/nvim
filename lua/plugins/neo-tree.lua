@@ -8,7 +8,7 @@ return {
 	},
 	lazy = false,
 	config = function()
-		vim.keymap.set("n", "<leader>n", function()
+		vim.keymap.set("n", "<C-n>", function()
 			vim.cmd("Neotree")
 			vim.cmd("vertical resize 30")
 		end, {})
