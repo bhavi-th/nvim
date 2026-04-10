@@ -10,6 +10,7 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
+          "stylua",
 					"lua_ls",
 					"vimls",
 					"ts_ls",
